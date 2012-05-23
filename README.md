@@ -13,15 +13,14 @@ Use this totally at your own risk. This is practically untested and has been kno
 
 <code>smartctl</code> from the [smartmontools](http://sourceforge.net/apps/trac/smartmontools/) package. I use [macports](http://www.macports.org/):
 
-<code>$ port install smartmontools</code>
+    $ port install smartmontools
 
 <code>smc</code> from [smcFanControl_2_3](http://www.eidac.de/?cat=40) (it's in Resources folder in the app package).
 
 If you copy <code>smc</code>, it needs to be owned by root with setuid, otherwise run this script as root.
 
-<code>$ sudo chown root:admin smc  
-$ sudo chmod +s smc
-</code>
+    $ sudo chown root:admin smc
+    $ sudo chmod +s smc
 
 ### See also
 
