@@ -1,35 +1,6 @@
 #!/bin/sh
 
 #
-# Inspired by the script in this hint:
-#
-# * http://hints.macworld.com/article.php?story=20110704054835249
-# * http://horstr.blogspot.co.uk/2008/04/dont-throw-your-macbook-air-out-just.html
-#
-# Other software that does something similar:
-#
-# * http://www.hddfancontrol.com/
-# * http://www.projectosx.com/forum/index.php?showtopic=1593&st=20&start=20
-#
-
-#
-# Requirements
-#
-# smartctl from the "smartmontools" package.
-#
-# $ port install smartmontools
-#
-# smc from "smcFanControl_2_3" (it's in Resources folder in the app package).
-#
-# * http://www.eidac.de/?cat=40
-#
-# If you copy smc, it needs to be owned by root with setuid, or otherwise run this script as root.
-#
-# $ sudo chown root:admin smc
-# $ sudo chmod +s smc
-#
-
-#
 # Get the disk temperature as reported by via smartmontools.
 #
 # My drive is from Seagate.
