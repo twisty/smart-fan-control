@@ -13,15 +13,18 @@ TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
 #
 # Depending on the actual temperature set a value for the maximum fan speed.
 #
-if [ $TEMP -le 32 ]
+if [ $TEMP -le 31 ]
 then
 	SPEED=1200
+elif [ $TEMP -le 33 ]
+then
+	SPEED=1400
 elif [ $TEMP -le 35 ]
 then
-	SPEED=1500
+	SPEED=1800
 elif [ $TEMP -le 38 ]
 then
-	SPEED=2500
+	SPEED=2600
 elif [ $TEMP -le 41 ]
 then
 	SPEED=3500
