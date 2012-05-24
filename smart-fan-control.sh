@@ -11,7 +11,7 @@
 TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
 
 #
-# Depending on the actual temperature set a value for the maximum fan speed.
+# Depending on the actual temperature set a value for the desired fan speed.
 #
 if [ $TEMP -le 31 ]
 then
@@ -43,10 +43,17 @@ fi
 #
 HEXSPEED=$(python -c "print hex($SPEED << 2)[2:]")
 
-echo "Drive temperature is $TEMP. Setting fan speed to $SPEED (hex $HEXSPEED)"
+#
+# Print findings.
+#
+echo "Drive temperature is $TEMP. Setting fan speed to $SPEED"
 
 #
 # Issue command to set the maximum fan speed.
+#
+# Note: I'm setting the **maximum** fan speed here to bring the speed down
+# from an artifically high level. This is needed on my iMac, which otherwise
+# would have the HDD fan running at max (6000+) all the time.
 #
 /usr/local/sbin/smc -k F1Mx -w $HEXSPEED
 

@@ -25,7 +25,7 @@ Use this totally at your own risk. This is practically untested and has been kno
     
         $ port install smartmontools
 
-2.  <code>smc</code> from [smcFanControl_2_3](http://www.eidac.de/?cat=40) (it's in Resources folder in the app package).
+2.  <code>smc</code> from [smcFanControl](http://www.eidac.de/?cat=40) (it's in Resources folder in the app package).
 
 ### Installation
 
