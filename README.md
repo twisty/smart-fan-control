@@ -25,17 +25,17 @@ Use this totally at your own risk. This is practically untested and has been kno
     
         $ port install smartmontools
 
-2.  <code>smc</code> from [smcFanControl](http://www.eidac.de/?cat=40) (it's in Resources folder in the app package).
+2.  <code>smc</code> from [smcFanControl](http://www.eidac.de/?cat=40) (it's in Resources folder in the app package). <code>smc</code> needs to be run as root, or otherwise owned by root with setuid.
+    
+        $ sudo chown root:admin smc
+        $ sudo chmod +s smc
+    
+    Currently, <code>smc</code> needs to be installed at <code>/usr/local/sbin/smc</code>.
 
 ### Installation
 
-    make install
+    sudo make install
 
-<code>smc</code> needs to be owned by root with setuid.
+It makes sense to schedule this script to run at a regular interval. There's a <code>launchd</code> plist included to run it every minute.
 
-    $ sudo chown root:admin smc
-    $ sudo chmod +s smc
-
-It makes sense to schedule this script to run at a regular interval. I use cron to run it every minute: <code>crontab -e</code>
-
-    */1 * * * * /usr/local/sbin/smart-fan-control | logger -t 'smart-fan-control-cron'
+    sudo make install-launchd
