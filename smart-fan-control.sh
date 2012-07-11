@@ -15,13 +15,13 @@ TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
 #
 if [ $TEMP -le 31 ]
 then
-	SPEED=1200
+	SPEED=1100
 elif [ $TEMP -le 33 ]
 then
-	SPEED=1400
+	SPEED=1200
 elif [ $TEMP -le 35 ]
 then
-	SPEED=1800
+	SPEED=1500
 elif [ $TEMP -le 38 ]
 then
 	SPEED=2600
