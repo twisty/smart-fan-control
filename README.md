@@ -21,21 +21,29 @@ Use this totally at your own risk. This is practically untested and has been kno
 
 ### Requirements
 
-1. <code>smartctl</code> from the [smartmontools](http://sourceforge.net/apps/trac/smartmontools/) package. I use [macports](http://www.macports.org/):
-    
-        $ port install smartmontools
+1. <code>smartctl</code> from the [smartmontools](https://www.smartmontools.org/) package. Using [Homebrew](https://brew.sh/):
+
+    ```
+    brew install smartmontools
+    ```
 
 2. <code>[smc](https://github.com/hholtmann/smcFanControl/tree/master/smc-command)</code> from [smcFanControl](https://github.com/hholtmann/smcFanControl). <code>smc</code> needs to be run as root, or otherwise owned by root with setuid.
-    
-        $ sudo chown root:admin smc
-        $ sudo chmod +s smc
-    
-    Currently, <code>smc</code> needs to be installed at <code>/usr/local/sbin/smc</code>.
+
+    ```
+    sudo chown root:admin smc
+    sudo chmod +s smc
+    ```
+
+Currently, <code>smc</code> needs to be installed at <code>/usr/local/sbin/smc</code>.
 
 ### Installation
 
-    sudo make install
+```
+sudo make install
+```
 
 It makes sense to schedule this script to run at a regular interval. There's a <code>launchd</code> plist included to run it every minute.
 
-    sudo make install-launchd
+```
+sudo make install-launchd
+```
