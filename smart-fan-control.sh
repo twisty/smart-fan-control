@@ -5,7 +5,7 @@
 #
 # My drive is from Seagate.
 #
-# * Seagate S.M.A.R.T. Attributes — http://sourceforge.net/apps/trac/smartmontools/wiki/AttributesSeagate
+# * Seagate S.M.A.R.T. Attributes — https://www.smartmontools.org/wiki/AttributesSeagate
 # * http://wl500g.info/showthread.php?10488-HOWTO-install-hddtemp&p=94762#post94762
 #
 TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
