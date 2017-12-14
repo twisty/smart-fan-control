@@ -5,8 +5,12 @@
 #
 # My drive is from Seagate.
 #
-# * Seagate S.M.A.R.T. Attributes — https://www.smartmontools.org/wiki/AttributesSeagate
-# * http://wl500g.info/showthread.php?10488-HOWTO-install-hddtemp&p=94762#post94762
+# According to [Seagate S.M.A.R.T. Attributes](https://www.smartmontools.org/wiki/AttributesSeagate)...
+# It seems that there are 2 temperature sensor values that you can read from Seagate drives.
+# You may need experiment and find which one works best for you.
+#
+#   - Key 190: Airflow_Temperature_Cel
+#   - Key 194: HDA Temperature
 #
 TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
 
