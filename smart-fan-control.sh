@@ -12,7 +12,7 @@
 #   - Key 190: Airflow_Temperature_Cel
 #   - Key 194: HDA Temperature
 #
-TEMP=$(/opt/local/sbin/smartctl -A /dev/disk0 | grep ^194 | awk '{print $10}')
+TEMP=$(/usr/local/bin/smartctl -A /dev/disk0 | grep ^190 | awk '{print $10}')
 
 #
 # Depending on the actual temperature set a value for the desired fan speed.
